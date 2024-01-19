@@ -61,6 +61,7 @@ function addNumbers() {
 
 function createBoard(rows, columns) {
 
+    board.style.display = "grid";
     board.innerHTML = "";
 
     for (let i = 0; i < rows; i++) {
