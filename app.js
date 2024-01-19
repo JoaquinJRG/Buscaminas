@@ -8,7 +8,6 @@ const minesNumber = 10
 let gameArray = []
 let minesPositions = []
 let firstClick = true
-let looseGame = false;
 
 
 //Lógica juego 
@@ -88,6 +87,7 @@ function createBoard(rows, columns) {
             revealEmptyCells(parseInt(x), parseInt(y))
 
             if(checkWin()) {
+                console.log("jkljkljkjkjkl")
                 document.querySelector("#winText").style.display = "block"
                 confetti({
                     particleCount: 100,
@@ -181,19 +181,18 @@ function revealEmptyCells(x, y) {
 
 
 function gameOver() {
-    looseGame = true; 
     let h3 = document.querySelector("#looseText");
-    h3.style.display = "block"
+    h3.style.display = "block";
 }
 
 
 function checkWin() {
 
-    if(looseGame) return false
-
     let revealedCells = [...document.querySelectorAll(".cell.revealed")].length
     
-    if(revealedCells + minesNumber == rows*columns) return true
+    if((revealedCells + minesNumber) === rows*columns) {
+        return true; 
+    }
 
     return false
 }
