@@ -2,9 +2,11 @@
 const board = document.getElementById("board")
 const playBtn = document.getElementById("play")
 const resetBtn = document.getElementById("reset")
-const rows = 9
-const columns = 9
-const minesNumber = 10
+const modal = document.getElementById("modal"); 
+
+let rows = 9
+let columns = 9
+let minesNumber = 10
 let gameArray = []
 let minesPositions = []
 let firstClick = true
@@ -27,8 +29,8 @@ function createGameArray(rows, columns, minesNumber) {
     let mines = 0
 
     while (mines < minesNumber) {
-        let x = Math.floor(Math.random() * 9)
-        let y = Math.floor(Math.random() * 9)
+        let x = Math.floor(Math.random() * rows)
+        let y = Math.floor(Math.random() * columns)
 
         if (gameArray[x][y] == 0) {
             gameArray[x][y] = "💣"
@@ -200,13 +202,27 @@ function checkWin() {
 
 
 playBtn.addEventListener("click", () => {
-
+    const input = document.querySelector("input:checked");
     playBtn.style.display = "none";
     resetBtn.style.display = "block"
+    modal.style.display = "none"; 
+
+    if(Number(input.value) == 9) {
+        board.classList.add("nine");
+        rows = 9;
+        columns = 9; 
+        minesNumber = 10; 
+    }
+
+    if(Number(input.value) == 16) {
+        board.classList.add("sixteen");
+        rows = 16; 
+        columns = 16;
+        minesNumber = 40; 
+    }
 
     createGameArray(rows, columns, minesNumber)
-    createBoard(rows, columns)
-
+    createBoard(rows, columns)  
 })
 
 resetBtn.addEventListener("click", () => {
@@ -218,4 +234,5 @@ resetBtn.addEventListener("click", () => {
     createGameArray(rows, columns, minesNumber)
     createBoard(rows, columns)
 })
+
 

@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscaminas</title>
+    <title>Buscaminas | Minesweeper</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/bomb-filled.svg">
 </head>
+
 <body>
     <main class="menu">
         <h1>Buscaminas 💣</h1>
         <h3 id="looseText">Fin de la partida</h3>
         <h3 id="winText">Ganaste</h3>
-        <button id="play">
-            <span class="button_top">JUGAR</span>
-        </button>
+
+        <div id="modal">
+
+            <div class="wrapper">
+                <div class="option">
+                    <input class="input" type="radio" name="btn" value="9" id="nine" checked>
+                    <div class="btn">
+                        <span class="span">9x9</span>
+                    </div>
+                </div>
+                <div class="option">
+                    <input class="input" type="radio" name="btn" value="16" id="sixteen">
+                    <div class="btn">
+                        <span class="span">16x16</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <button id="play">
+                <span class="button_top">JUGAR</span>
+            </button>
+        </div>
         <button id="reset">
             <span class="button_top">RESET</span>
         </button>
@@ -24,5 +46,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
-</html>
 
+</html>

@@ -6,23 +6,23 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     background-color: #f9f9fd;
     opacity: 1;
-    background-image:  radial-gradient(#0d0f31 0.5px, transparent 0.5px), radial-gradient(#0d0f31 0.5px, #f9f9fd 0.5px);
+    background-image: radial-gradient(#0d0f31 0.5px, transparent 0.5px), radial-gradient(#0d0f31 0.5px, #f9f9fd 0.5px);
     background-size: 20px 20px;
-    background-position: 0 0,10px 10px;
+    background-position: 0 0, 10px 10px;
 
 }
 
 
 h1 {
+    margin-top: 50px;
     margin-bottom: 30px;
 }
 
@@ -45,12 +45,32 @@ main {
     align-items: center;
 }
 
-#board {
+
+#modal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #f9f9fd;
+    border: solid 1px black;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#board.nine{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
     background-color: #f9f9fd;
     margin-top: 20px;
+}
+
+#board.sixteen {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    background-color: #f9f9fd;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .cell {
@@ -90,8 +110,8 @@ main {
 button {
     /* Variables */
     --button_radius: 0.75em;
-    --button_color: #e8e8e8;
-    --button_outline_color: #000000;
+    --button_color: #fff;
+    --button_outline_color: #323232;
     font-size: 17px;
     font-weight: bold;
     border: none;
@@ -124,4 +144,61 @@ button:active .button_top {
 
 #reset {
     display: none;
+}
+
+
+.wrapper {
+    --font-color-dark: #323232;
+    --font-color-light: #FFF;
+    --bg-color: #fff;
+    --main-color: #323232;
+    position: relative;
+    width: 250px;
+    height: 36px;
+    background-color: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 34px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 4px 4px var(--main-color);
+}
+
+.option {
+    width: 80.5px;
+    height: 28px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    appearance: none;
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.span {
+    color: var(--font-color-dark);
+}
+
+.input:checked+.btn {
+    background-color: var(--main-color);
+}
+
+.input:checked+.btn .span {
+    color: var(--font-color-light);
 }
