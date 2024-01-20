@@ -1,3 +1,4 @@
 # Buscaminas
 
-![Captura de pantalla 2024-01-20 152805](https://github.com/JoaquinJRG/Buscaminas/assets/109892612/2f41af1e-d360-4313-8c76-559b1ff2a05a)
+
+![Captura de pantalla 2024-01-20 152915](https://github.com/JoaquinJRG/Buscaminas/assets/109892612/bbbd5a2c-0d4a-4102-978d-697229c13fd1)
